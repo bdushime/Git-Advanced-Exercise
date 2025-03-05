@@ -451,3 +451,171 @@ baa713f Creating third and  fourth file
 4c6443e Creating second file
 6c2afa4 Creating third file
 24165b9 Creating first file
+
+
+
+
+
+
+
+
+--exercise,8,9 and 10 --
+
+
+
+
+
+
+
+
+
+gymuruhimbi@uruhimbis-iMac squashing % git checkout -b ft/branch
+Switched to a new branch 'ft/branch'
+gymuruhimbi@uruhimbis-iMac squashing % git branch
+* ft/branch
+  main
+gymuruhimbi@uruhimbis-iMac squashing % echo "Adding test 5" > test5.txt
+gymuruhimbi@uruhimbis-iMac squashing % git add test5.txt
+gymuruhimbi@uruhimbis-iMac squashing % git commit -m 'Implementing' 
+[ft/branch b96d4fb] Implementing
+ Committer: Gym Uruhimbi <gymuruhimbi@uruhimbis-iMac.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.txt
+gymuruhimbi@uruhimbis-iMac squashing % git log --oneline
+b96d4fb (HEAD -> ft/branch) Implementing
+69ff117 (origin/main, main)  history.md
+5ea932b trying to push after squashing
+2762a99 Creating third and  fourth file
+8acb35c Creating third file
+f6cad50 Creating second file
+24165b9 Creating first file
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+gymuruhimbi@uruhimbis-iMac squashing % git cherry-pick b96d4fb
+[main 7fdba29] Implementing
+ Date: Tue Mar 4 12:41:23 2025 +0200
+ Committer: Gym Uruhimbi <gymuruhimbi@uruhimbis-iMac.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.txt
+gymuruhimbi@uruhimbis-iMac squashing % git log --oneline
+7fdba29 (HEAD -> main) Implementing
+69ff117 (origin/main)  history.md
+5ea932b trying to push after squashing
+2762a99 Creating third and  fourth file
+8acb35c Creating third file
+f6cad50 Creating second file
+24165b9 Creating first file
+gymuruhimbi@uruhimbis-iMac squashing % git log --graph --oneline --all
+* 7fdba29 (HEAD -> main) Implementing
+| * b96d4fb (ft/branch) Implementing
+|/  
+* 69ff117 (origin/main)  history.md
+* 5ea932b trying to push after squashing
+* 2762a99 Creating third and  fourth file
+* 8acb35c Creating third file
+* f6cad50 Creating second file
+* 24165b9 Creating first file
+gymuruhimbi@uruhimbis-iMac squashing % git reflog
+7fdba29 (HEAD -> main) HEAD@{0}: cherry-pick: Implementing
+69ff117 (origin/main) HEAD@{1}: checkout: moving from ft/branch to main
+b96d4fb (ft/branch) HEAD@{2}: commit: Implementing
+69ff117 (origin/main) HEAD@{3}: checkout: moving from main to ft/branch
+69ff117 (origin/main) HEAD@{4}: pull --rebase origin main (finish): returning to refs/heads/main
+69ff117 (origin/main) HEAD@{5}: pull --rebase origin main (start): checkout 69ff1174926d16533cde73f588e2bb600a1f3af3
+9f2d18b HEAD@{6}: rebase (finish): returning to refs/heads/main
+9f2d18b HEAD@{7}: rebase (pick): trying to push after squashing
+baa713f HEAD@{8}: rebase (pick): Creating third and fourth file
+4c6443e HEAD@{9}: rebase (pick): Creating second file
+gymuruhimbi@uruhimbis-iMac squashing % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+gymuruhimbi@uruhimbis-iMac squashing % git push
+To https://github.com/bdushime/Git-Advanced-Exercise.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/bdushime/Git-Advanced-Exercise.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+gymuruhimbi@uruhimbis-iMac squashing % git pull --rebase origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 2.89 KiB | 591.00 KiB/s, done.
+From https://github.com/bdushime/Git-Advanced-Exercise
+ * branch            main       -> FETCH_HEAD
+   69ff117..aa93539  main       -> origin/main
+Successfully rebased and updated refs/heads/main.
+gymuruhimbi@uruhimbis-iMac squashing % git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/bdushime/Git-Advanced-Exercise.git
+   aa93539..7045dd2  main -> main
+gymuruhimbi@uruhimbis-iMac squashing % git log --oneline
+7045dd2 (HEAD -> main, origin/main) Implementing
+aa93539  history.md
+69ff117  history.md
+5ea932b trying to push after squashing
+2762a99 Creating third and  fourth file
+8acb35c Creating third file
+f6cad50 Creating second file
+24165b9 Creating first file
+gymuruhimbi@uruhimbis-iMac squashing % git checkout 69ff117
+Note: switching to '69ff117'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 69ff117  history.md
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main
+Previous HEAD position was 69ff117  history.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+gymuruhimbi@uruhimbis-iMac squashing % 
