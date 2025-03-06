@@ -1,0 +1,184 @@
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main          
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+gymuruhimbi@uruhimbis-iMac squashing % git pull origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 2.32 KiB | 790.00 KiB/s, done.
+From https://github.com/bdushime/Git-Advanced-Exercise
+ * branch            main       -> FETCH_HEAD
+   7045dd2..caf99a8  main       -> origin/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+gymuruhimbi@uruhimbis-iMac squashing % git checkout ft/new-feature
+Switched to branch 'ft/new-feature'
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main          
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+gymuruhimbi@uruhimbis-iMac squashing % git pull
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+gymuruhimbi@uruhimbis-iMac squashing % git checkout ft/new-feature
+Switched to branch 'ft/new-feature'
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main          
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+gymuruhimbi@uruhimbis-iMac squashing % git merge ft/new-feature
+Merge made by the 'ort' strategy.
+ feature.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature.txt
+gymuruhimbi@uruhimbis-iMac squashing % git checkout ft/new-feature
+Switched to branch 'ft/new-feature'
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main          
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 3 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+gymuruhimbi@uruhimbis-iMac squashing % git pull origin main
+From https://github.com/bdushime/Git-Advanced-Exercise
+ * branch            main       -> FETCH_HEAD
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+gymuruhimbi@uruhimbis-iMac squashing % git merge ft/new-feature
+
+Already up to date.
+gymuruhimbi@uruhimbis-iMac squashing % git pull --no-rebase origin main
+
+From https://github.com/bdushime/Git-Advanced-Exercise
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ README.md | 168 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 168 insertions(+)
+gymuruhimbi@uruhimbis-iMac squashing % git push    
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (9/9), 1004 bytes | 1004.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To https://github.com/bdushime/Git-Advanced-Exercise.git
+   caf99a8..ee02784  main -> main
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+gymuruhimbi@uruhimbis-iMac squashing % git branch -d ft/new-feature
+
+Deleted branch ft/new-feature (was df07f71).
+gymuruhimbi@uruhimbis-iMac squashing % 
+ *  History restored 
+
+gymuruhimbi@uruhimbis-iMac squashing % git branch
+  ft/branch
+* main
+gymuruhimbi@uruhimbis-iMac squashing % git log --oneline
+ee02784 (HEAD -> main, origin/main) Merge branch 'main' of https://github.com/bdushime/Git-Advanced-Exercise yes yes
+213fc75 Merge branch 'ft/new-feature' merging feature and main merging feature and main
+84b6285 Updated project readme
+df07f71 Implemented core functionality for new feature
+caf99a8 Update README.md
+7045dd2 Implementing
+aa93539  history.md
+69ff117  history.md
+5ea932b trying to push after squashing
+2762a99 Creating third and  fourth file
+8acb35c Creating third file
+gymuruhimbi@uruhimbis-iMac squashing % git checkout -b ft/new-branch-from-commit df07f71 
+Switched to a new branch 'ft/new-branch-from-commit'
+gymuruhimbi@uruhimbis-iMac squashing % git branch
+  ft/branch
+* ft/new-branch-from-commit
+  main
+gymuruhimbi@uruhimbis-iMac squashing % touch newfile
+gymuruhimbi@uruhimbis-iMac squashing % echo 'Hello world' > newfile
+gymuruhimbi@uruhimbis-iMac squashing % echo 'indeed' > firstFile.txt
+gymuruhimbi@uruhimbis-iMac squashing % git add .
+gymuruhimbi@uruhimbis-iMac squashing % git commit -m 'adding content to new-branch-from-commit'
+[ft/new-branch-from-commit 4035f99] adding content to new-branch-from-commit
+ Committer: Gym Uruhimbi <gymuruhimbi@uruhimbis-iMac.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 newfile
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+gymuruhimbi@uruhimbis-iMac squashing % git merge ft/new-branch-from-commit
+Merge made by the 'ort' strategy.
+ firstFile.txt | 2 +-
+ newfile       | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 newfile
+gymuruhimbi@uruhimbis-iMac squashing % git add .
+gymuruhimbi@uruhimbis-iMac squashing % git commit -m 'resolved merge conflict'
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+gymuruhimbi@uruhimbis-iMac squashing % git pull origin rebase
+fatal: couldn't find remote ref rebase
+gymuruhimbi@uruhimbis-iMac squashing % git fetch origin
+gymuruhimbi@uruhimbis-iMac squashing % git rebase origin/main
+Successfully rebased and updated refs/heads/main.
+gymuruhimbi@uruhimbis-iMac squashing % git push origin --force
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 351 bytes | 351.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/bdushime/Git-Advanced-Exercise.git
+   ee02784..1487dd8  main -> main
