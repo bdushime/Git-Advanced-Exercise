@@ -619,3 +619,28 @@ Previous HEAD position was 69ff117  history.md
 Switched to branch 'main'
 Your branch is up to date with 'origin/main'.
 gymuruhimbi@uruhimbis-iMac squashing % 
+
+
+
+
+
+
+
+
+
+Part 3 Advanced Workflow:
+
+Exercise 1:
+
+
+
+ D:\The GYM git Exercises\Git Advanced Exercise3\Git-Advanced-Exercise> git stash
+ Saved working directory and index state WIP on main: 6a07ca2 adding exercise 2 readme
+PS D:\The GYM git Exercises\Git Advanced Exercise3\Git-Advanced-Exercise> git stash list
+stash@{0}: WIP on main: 6a07ca2 adding exercise 2 readme
+
+
+
+Exercise 2:
+
+   
