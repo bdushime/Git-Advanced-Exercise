@@ -679,6 +679,24 @@ Everything up-to-date
 
 Exercise 10:Pulling Changes from Remote Repositories
 
+
+
+ gymuruhimbi@uruhimbis-iMac squashing % git pull origin main
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 9 (delta 6), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (9/9), 3.18 KiB | 295.00 KiB/s, done.
+From https://github.com/bdushime/Git-Advanced-Exercise
+ * branch            main       -> FETCH_HEAD
+   6a07ca2..72cd1d0  main       -> origin/main
+Updating 1487dd8..72cd1d0
+Fast-forward
+ README.md |  68 ++++++++++++++++++++++++++++++++++
+ readmeEx2 | 184 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 252 insertions(+)
+ create mode 100644 readmeEx2
+
   
 
 
