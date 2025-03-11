@@ -662,6 +662,27 @@ Deleted tag 'v1.2' (was 4a5004e)
 
 
 
+Exercise 9:Pushing Local Work to Remote Repositories
+
+
+gymuruhimbi@uruhimbis-iMac squashing % git branch
+  feature1-branch
+  ft/branch
+  ft/improved-branch-name
+* main
+gymuruhimbi@uruhimbis-iMac squashing % git checkout ft/improved-branch-name
+Switched to branch 'ft/improved-branch-name'
+
+gymuruhimbi@uruhimbis-iMac squashing % git push origin ft/improved-branch-name
+Everything up-to-date
+
+
+Exercise 10:Pulling Changes from Remote Repositories
+
+  
+
+
+
 
 
 
