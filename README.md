@@ -641,6 +641,28 @@ stash@{0}: WIP on main: 6a07ca2 adding exercise 2 readme
 
 
 
-Exercise 2:
+Exercise 7:Working with tags
+
+gymuruhimbi@uruhimbis-iMac squashing % git checkout main
+gymuruhimbi@uruhimbis-iMac squashing % git tag v1.0
+gymuruhimbi@uruhimbis-iMac squashing % git tag
+v1.0
+
+Exercise 8:Listing and Deleting Tags
+
+gymuruhimbi@uruhimbis-iMac squashing % git tag v1.1
+gymuruhimbi@uruhimbis-iMac squashing % git tag v1.2
+gymuruhimbi@uruhimbis-iMac squashing % git tag
+v1.0
+v1.1
+v1.2
+gymuruhimbi@uruhimbis-iMac squashing % git tag -d v1.2
+Deleted tag 'v1.2' (was 4a5004e)
+
+
+
+
+
+
 
    
